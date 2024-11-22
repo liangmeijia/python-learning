@@ -6,5 +6,5 @@
 # t.fun1()
 
 #引入模块的式2
-from test0 import fun1
+from mypackage.test0 import fun1
 fun1()
