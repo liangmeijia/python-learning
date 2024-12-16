@@ -1,8 +1,7 @@
 import time
-from multiprocessing import Process
+from multiprocessing import Process,Queue
 import threading
 import os
-from queue import Queue
 """
 【进程】
 1.含义：
@@ -96,22 +95,26 @@ q.empty(): 判断队列是否为空
 q.qsize():返回当前队列包含的消息数量
 q.fu11():判断队列是否满了
 '''
-li = [] #全局变量
-def wdata(n,q):
+queue = Queue() #队列 ，可共享数据
+li = ['哈哈','呵呵']
+def wdata(n,queue):
     for i in range(n):
+        queue.put(i)
         li.append(i)
-        q.put(i)
-        time.sleep(1)
-    print(f'写入的数据是{li}')
-def rdata(q):
-    while not q.empty():
-        return q.get()
-    print(f'读出的数据是{li}')
+        #time.sleep(1)
+        print(f'queue写入的数据{i}')
+        print(f'li写入的数据:{li}')
+def rdata(queue):
+    while True:
+        if queue.empty():
+            break
+        else:
+            print(f'queue读出的数据{queue.get()}')
+    print(f'li读出的数据:{li}')
 if __name__ == '__main__':
-    q = Queue()
-    p1 = Process(target=wdata, args=(4,q))
-    p2 = Process(target=rdata, args=(q,))
+    p1 = Process(target=wdata, args=(3,queue,))
+    p2 = Process(target=rdata, args=(queue,))
     p1.start() # 可以正确地写入数据
-    #p1.join()
+    p1.join()
     p2.start() #读出的数据是空的，因为进程间不共享全局变量
 
