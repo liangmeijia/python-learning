@@ -1,0 +1,20 @@
+DEBUG:root:debug
+INFO:root:info
+WARNING:root:warning
+ERROR:root:error
+CRITICAL:root:critical
+DEBUG:root:debug
+INFO:root:info
+WARNING:root:warning
+ERROR:root:error
+CRITICAL:root:critical
+2024-12-18 16:42:13,438 - 11.常用模块.py[line:109] - DEBUG: debug
+2024-12-18 16:42:13,438 - 11.常用模块.py[line:110] - INFO: info
+2024-12-18 16:42:13,438 - 11.常用模块.py[line:111] - WARNING: warning
+2024-12-18 16:42:13,439 - 11.常用模块.py[line:112] - ERROR: error
+2024-12-18 16:42:13,439 - 11.常用模块.py[line:113] - CRITICAL: critical
+2024-12-18 16:42:57,166 - 11.常用模块.py[line:109] - DEBUG: 哈哈哈debug
+2024-12-18 16:42:57,167 - 11.常用模块.py[line:110] - INFO: info
+2024-12-18 16:42:57,167 - 11.常用模块.py[line:111] - WARNING: warning
+2024-12-18 16:42:57,167 - 11.常用模块.py[line:112] - ERROR: error
+2024-12-18 16:42:57,167 - 11.常用模块.py[line:113] - CRITICAL: critical
